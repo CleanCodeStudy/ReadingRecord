@@ -30,31 +30,7 @@ public class Banks {
         this.money = money;
     }
 
-    public int withdraw1(final int money, final CountDownLatch latch) throws InterruptedException {
-        if (this.money < money) {
-            throw new IllegalArgumentException("잔액 부족");
-        }
-
-        latch.await();
-        this.money -= money;
-
-        return this.money;
-    }
-
-    public int withdraw2(final int money, final CountDownLatch latch) throws InterruptedException {
-        if (this.money < money) {
-            throw new IllegalArgumentException("잔액 부족");
-        }
-        this.money -= money;
-        latch.countDown();
-
-        return this.money;
-    }
-
     public int withDrawSleep(final int money, final long sleepTime) throws InterruptedException {
-//        if (this.money < money) {
-//            throw new IllegalArgumentException("잔액 부족");
-//        }
         Thread.sleep(sleepTime);
         this.money -= money;
 
