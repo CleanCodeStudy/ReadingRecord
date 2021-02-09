@@ -2,6 +2,7 @@ package com.javabom.toby.user.dao;
 
 import com.javabom.toby.user.connectionmaker.ConnectionMaker;
 import com.javabom.toby.user.connectionmaker.LocalDBConnectionMaker;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
@@ -35,7 +36,7 @@ public class DaoFactory {
         return new JdbcContext();
     }
 
-    @Bean
+    @ConditionalOnMissingBean
     public DataSource dataSource() {
         SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
 
