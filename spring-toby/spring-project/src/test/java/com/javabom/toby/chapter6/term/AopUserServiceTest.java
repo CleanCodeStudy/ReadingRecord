@@ -1,4 +1,4 @@
-package com.javabom.toby.chapter6;
+package com.javabom.toby.chapter6.term;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
