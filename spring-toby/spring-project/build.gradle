@@ -1,5 +1,6 @@
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework:spring-jdbc'
     implementation 'com.h2database:h2:1.4.197'
     compile 'org.aspectj:aspectjweaver:1.8.9'
