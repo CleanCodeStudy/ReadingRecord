@@ -7,25 +7,21 @@ import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
 @Service
-public class PropagationTestService implements PropagationService {
-
+public class PropagationTestService {
     @Transactional(propagation = Propagation.REQUIRED)
-    @Override
     public void required() {
         printTransactionInfo();
     }
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
-    @Override
     public void requiresNew() {
         printTransactionInfo();
     }
 
     @Transactional(propagation = Propagation.NOT_SUPPORTED)
-    @Override
     public void notSupported() {
-
         printTransactionInfo();
+        throw new IllegalStateException();
     }
 
     private void printTransactionInfo() {
